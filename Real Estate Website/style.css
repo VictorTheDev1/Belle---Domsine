@@ -202,7 +202,7 @@
 
 
 .navbar {
-    background: linear-gradient(135deg, #462903, #9e6111);
+    background: linear-gradient(135deg, #462903, #966F33 );
     position: fixed;
     top: 0;
     left: -310px;
@@ -405,8 +405,207 @@
 
 
 /*--------------------*\
-    #About
+    #Responsive
   \*-----------------------*/   
+  @media screen and (max-width: 768px) {
+        .stars {
+  color: #fece0d; /* golden */
+  font-size: 1.5rem;
+  margin-top: -90px;
+  letter-spacing: 5px;
+      margin-bottom: 5px;
+      margin-top: -36%;
 
+}
+
+    .hero address{
+      margin-top: -100px;
+    }
+  header address{
+  }
+   header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+    header h2 {
+      font-family: Alex Brush;
+      color: #fff;
+      font-size: 40px;
+    }
+        .hero h1 {
+      font-family: LXGW Marker Gothic;
+;
+      font-size: 2.7rem;
+      max-width: 800px;
+      line-height: 1.4;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+      .stars {
+      margin-bottom: 5px;
+      margin-top: -108%;
+}
+    .hero h1 {
+
+      font-size: 2.5rem;
+      max-width: 900px;
+      line-height: 1.4;
+    }
+    .hero address{
+      visibility: hidden;
+    }
+  header address{
+    visibility: hidden;
+  }
+     header {
+      align-items: center;
+      display: inline;
+      
+     text-align: center;
+    }
+    header h2 {
+      font-family: Alex Brush;
+      color: #fff;
+      font-size: 40px;
+    }
+  }
 
   
+/*--------------------*\
+    #rooms
+  \*-----------------------*/ 
+  .room1{
+    background: linear-gradient(135deg, #452802, #7f591f);
+  }
+.container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    .years-box {
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border: 2px solid #333;
+      margin-bottom: 20px;
+    }
+
+    .years-box h1 {
+      font-size: 2.5rem;
+      color: #fcb134;
+    }
+
+    .intro-text {
+      max-width: 700px;
+      padding-left: 20px;
+    }
+
+    .intro-text h2 {
+      font-size: 2rem;
+         font-family: LXGW Marker Gothic;
+
+    }
+
+    .intro-text p {
+      margin: 15px 0;
+      color: #ccc;
+      font-family: Lato;
+    }
+
+    .intro-text button {
+      background-color: #fcb134;
+      border: none;
+      padding: 10px 20px;
+      color: #111;
+      cursor: pointer;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #1b1b1b;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #fcb134;
+      font-size: 0.9rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #fcb134;
+    }
+
+    .feature-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .feature-text {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+      }
+
+      .intro-text {
+        padding-left: 0;
+      }
+    }

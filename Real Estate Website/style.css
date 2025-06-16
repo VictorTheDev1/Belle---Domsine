@@ -496,86 +496,126 @@
 
     .intro {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 60px;
+      gap: 117px;
     }
 
     .years-box {
-      background-color: #ffffff;
-      padding: 20px;
+      padding: 35px;
       text-align: center;
-      border: 2px solid #333;
+      border: 2px solid #fff;
       margin-bottom: 20px;
+         border-radius: 34px;
+             display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 70px;
+  margin-top: 20px;
     }
 
     .years-box h1 {
-      font-size: 2.5rem;
-      color: #fcb134;
+      font-size: 3.5rem;
+      color: #c88123;
+      font-family: ubuntu;
     }
-
+    .years-box p{
+      color: #fff;
+      font-family: lato;
+      font-size: 18px;
+    }
     .intro-text {
       max-width: 700px;
       padding-left: 20px;
     }
 
+   
     .intro-text h2 {
-      font-size: 2rem;
-         font-family: LXGW Marker Gothic;
+      font-size: 1.8rem;
+         color: #fff;
+        font-weight: 350;
 
     }
 
-    .intro-text p {
+    .intro-text2 p {
       margin: 15px 0;
       color: #ccc;
       font-family: Lato;
+      margin-bottom: 25px;
     }
 
-    .intro-text button {
-      background-color: #fcb134;
-      border: none;
+    .intro-text h6{
+      color: #c89b61;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+      .intro-text2 button {
+      background-color: #c89b61;
       padding: 10px 20px;
-      color: #111;
+      color: #fff;
       cursor: pointer;
+      border-radius: 10px;
+      font-family: ubuntu;
+    }
+    .intro-text2 button:hover{
+      background: #452802;
+      color: #fff;
+      transition: background-color 0.9s ease;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+
+    .image-row {
+      display: flex;
+      justify-content: space-between;
       gap: 20px;
     }
 
-    .card {
-      background-color: #1b1b1b;
+    .image-box {
       position: relative;
+      flex: 1;
+      min-width: 280px;
+      height: 300px;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      border-radius: 10px;
     }
 
-    .card img {
+    .image-box img {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
       display: block;
+
     }
 
-    .card-content {
-      padding: 20px;
+    .image-box .overlay-text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      font-size: 1.0rem;
+      padding: 10px 15px;
+      font-family: LXGW Marker Gothic;
+      border-radius: 5px;
+    }
+     .image-box .overlay-text2 {
+      position: absolute;
+      bottom: 80%;
+      left: 20px;
+      color: white;
+      font-size: 1.rem;
+      font-family: LXGW Marker Gothic;
+      padding: 10px 15px;
+      border-radius: 5px;
     }
 
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+    @media (max-width: 768px) {
+      .image-row {
+        flex-direction: column;
+      }
     }
-
-    .card a {
-      text-decoration: none;
-      color: #fcb134;
-      font-size: 0.9rem;
-    }
-
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -608,4 +648,17 @@
       .intro-text {
         padding-left: 0;
       }
+    }
+    .col{
+      font-family: Lxgw marker gothic;
+      text-align: center;
+    
+    }
+    .col h2{
+      font-size: 1.9rem;
+      color: #fff;
+    }
+    .col h6{
+      font-size: 16px;
+      color: #bf8f51;
     }

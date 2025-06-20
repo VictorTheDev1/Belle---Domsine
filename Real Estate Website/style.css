@@ -627,6 +627,9 @@
     #Responsive
   \*-----------------------*/   
   @media screen and (max-width: 768px) {
+    .hero{
+      height: 90vh;
+    }
         .stars {
   color: #fece0d; /* golden */
   font-size: 1.5rem;
@@ -705,7 +708,7 @@
   @media (max-width: 480px) {
       .stars {
       margin-bottom: 5px;
-      margin-top: -108%;
+      margin-top: 0%;
 }
     .hero h1 {
 

@@ -736,7 +736,7 @@
     }
       .rs{
       display: flex;
-      gap: 40px;
+      justify-content: space-between;
     }
     .rs a{
       color: #fff;
@@ -756,7 +756,7 @@
       transition: background-color 0.8s ease;
     }
   .years-box {
-      margin-bottom: -70px;
+      margin-bottom: -80px;
       gap: 0px;
       margin-left: 50px;
       margin-top: 20px;
@@ -768,7 +768,7 @@
     }
 
     .intro-text h2 {
-      margin-bottom: -90px;
+      margin-bottom: -50px;
     }
          .intro-text2 button {
       margin-bottom: 40px;
@@ -776,6 +776,10 @@
       .image-box .overlay-text23 {
       bottom: 90%;
     }
+      .image-box .overlay-text2 {
+    bottom: 80%;
+    font-size: 1.5rem;
+  }
   }
 
   .sp{

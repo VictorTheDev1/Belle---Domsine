@@ -1,31 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anton&family=Baskervville:ital,wght@0,400..700;1,400..700&family=LXGW+Marker+Gothic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@font-face {
-  font-family: 'Dubai';
-  src: url('/fonts/Dubai-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Dubai';
-  src: url('/fonts/Dubai-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Dubai';
-  src: url('/fonts/Dubai-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Dubai';
-  src: url('/fonts/Dubai-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anton&family=Baskervville:ital,wght@0,400..700;1,400..700&family=LXGW+Marker+Gothic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+ 
 
 
 :root {
@@ -345,8 +319,9 @@
       z-index: 10;
     }
     header h2 {
-      font-family:  Alex Brush;
+      font-family:  Truculenta;
       color: #fff;
+      font-weight: 450;
       font-size: 30px;
     }
 
@@ -785,9 +760,9 @@
       z-index: 10;
     }
     header h2 {
-      font-family: Alex Brush;
+      font-family: Truculenta;
       color: #fff;
-      font-size: 40px;
+      font-size: 29px;
     }
   
         .hero h1 {
@@ -835,10 +810,29 @@
 
 
 
-.rs a{
-  visibility: hidden;   
-}
-
+   .rs a{
+      color: #fff;
+      text-decoration: none;
+      margin-left: 10px;
+      font-size: 1rem;
+      background: #bf8f51;
+      padding: 2px 10px;
+      border: #714209 1px solid;
+      border-radius: 10px;
+      font-family: LXGW Marker Gothic;
+      visibility: visible;
+      align-content: center;
+    }
+      .rs a:hover{
+      background: #462903;
+      color: #fff;
+      transition: background-color 0.8s ease;
+    }
+  .rs{
+      display: flex;
+      justify-content: space-between;
+    }
+    
   @media (max-width: 480px) {
       .stars {
       margin-bottom: 5px;
@@ -864,28 +858,30 @@
      text-align: center;
     }
     header h2 {
-      font-family: Alex Brush;
+      font-family: Truculenta;
       color: #fff;
       font-size: 26px;
       font-weight: 600;
       
-      margin-top: 8px;
+      margin-top: 0px;
     }
       .rs{
       display: flex;
       justify-content: space-between;
     }
-    .rs a{
+      .rs a{
       color: #fff;
       text-decoration: none;
       margin-left: 30px;
       font-size: 1rem;
       background: #bf8f51;
-      padding: 8px 16px;
+      padding: 2px 10px;
       border: #714209 1px solid;
       border-radius: 10px;
       font-family: LXGW Marker Gothic;
       visibility: visible;
+      align-content: center;
+      height: 35px;
     }
     .rs a:hover{
       background: #462903;

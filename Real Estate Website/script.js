@@ -10,7 +10,7 @@ const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 /**
  * navbar toggle
- */
+ */    
 
 const navbar = document.querySelector("[data-navbar]");
 const overlay = document.querySelector("[data-overlay]");

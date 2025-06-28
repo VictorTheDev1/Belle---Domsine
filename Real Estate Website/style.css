@@ -806,6 +806,7 @@
       outline: none;
       border: 1px solid #ccc;
       border-radius: 4px;
+      font-family: var(--ff-ubuntu);
       margin-right: 10px;
     }
 
@@ -951,6 +952,26 @@
  .testimonials h2 {
   margin-top: -22.5%;
 }
+ .footer {
+  gap: 0px; 
+}
+ .line2{
+  width: 93%;
+  margin-left: -8%;
+  margin-top: 23%;
+ }
+   .footer-nav {
+      gap: 18px;
+      margin-left: -14px;
+    }
+      .footer-email button {
+      padding: 0px 6px;
+      border-radius: 7px;
+    }
+    .footer-email input[type="email"]{
+      margin-right: 0px;
+border-radius: 7px;
+     }
   }
 
 
@@ -1063,7 +1084,24 @@
   .fw1 h2 {
     margin-top: 17%;
   }
+  .line2 {
+    width: 103%;
   }
+  .footer-email button{
+  height: 44px;
+    width: 100px;
+  }
+.footer-email input[type="email"]{
+  height: 44px;
+}
+  }
+
+
+
+
+
+
+
 
   .sp{
     margin-bottom: 30px;

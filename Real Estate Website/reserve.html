@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reserve Rooms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('img/hotel rm.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  color: #333;
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(0.7); /* darkens the image slightly */
+  z-index: -1;
+}
+
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    .room-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+  .room-card {
+  background: rgba(190, 123, 69, 0.2); /* semi-transparent */
+  backdrop-filter: blur(55px); /* this blurs the background behind it */
+  -webkit-backdrop-filter: blur(15px); /* for Safari support */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* optional: adds glassy border */
+}
+
+
+    .room-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .room-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .room-content {
+      padding: 1.5rem;
+    }
+
+    .room-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .room-price {
+      color: #c5a560;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .room-desc {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .book-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #c5a560, #b89442);
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .book-btn:hover {
+      background: linear-gradient(135deg, #b89442, #c5a560);
+    }
+  </style>
+</head>
+<body>
+    <div class="bg-overlay"></div>
+
+  <div class="container">
+    <h1 class="section-title">Reserve a Room</h1>
+
+    <div class="room-grid">
+      <!-- Room 1 -->
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="room-img" alt="Room 101">
+        <div class="room-content">
+          <h3 class="room-name">Standard Room</h3>
+          <p class="room-price">$120 / night</p>
+          <p class="room-desc">A cozy and clean room perfect for solo travelers or couples. Includes Wi-Fi, TV, and a private bathroom.</p>
+          <a href="/booking/index.html?room=Standard%20Room&price=120" class="book-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Room 2 -->
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227" class="room-img" alt="Deluxe Room">
+        <div class="room-content">
+          <h3 class="room-name">Deluxe Room</h3>
+          <p class="room-price">$200 / night</p>
+          <p class="room-desc">Spacious deluxe room with elegant decor, balcony view, king-size bed, and luxurious bathroom amenities.</p>
+          <a href="/booking/index.html?room=Deluxe%20Room&price=200" class="book-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Room 3 -->
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" class="room-img" alt="Suite">
+        <div class="room-content">
+          <h3 class="room-name">Modern Suite</h3>
+          <p class="room-price">$320 / night</p>
+          <p class="room-desc">Top-tier luxury suite with private lounge, full kitchen, ocean view, and smart automation throughout the room.</p>
+          <a href="/booking/index.html?room=Modern%20Suite&price=320" class="book-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

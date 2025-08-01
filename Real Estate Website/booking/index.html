@@ -9,6 +9,7 @@
 </head>
 <body>
   <!-- Popup Modal -->
+<!-- Popup Overlay -->
 <div id="popupOverlay">
   <div class="popupBox">
     <span class="popup-close" onclick="closePopup()">✖</span>
@@ -29,8 +30,12 @@
         <input type="text" name="name" placeholder="Full Name" required />
         <input type="email" name="email" placeholder="Email Address" required />
         <input type="tel" name="phone" placeholder="Phone Number" required />
-        
-        <div class="dates">
+       
+      <div class="che">
+        <label for="checkin">Check-in Time:</label>
+          <label for="checkout">Check-out Time:</label>
+      </div>
+          <div class="dates">
           <input type="date" name="checkin" id="checkin" required />
           <input type="date" name="checkout" id="checkout" required />
         </div>
@@ -52,7 +57,8 @@
     <div class="summary">
       <p><strong>Room:</strong> <span id="roomName">Loading...</span></p>
       <p><strong>Date:</strong> <span id="bookDate">Loading...</span></p>
-      <p><strong>Price:</strong> $<span id="roomPrice">0</span></p>
+     <p id="totalAmount" style="font-weight:bold; margin-top: 10px;">Total: $0</p>
+
     </div>
 
     <div class="payment-methods">
@@ -180,7 +186,29 @@
     event.preventDefault();
     window.location.href = "checkout.html";
   }
+  const checkInInput = document.getElementById("checkin");
+  const checkOutInput = document.getElementById("checkout");
+  const totalDisplay = document.getElementById("totalAmount"); // Add this in your HTML
+  const baseRatePerNight = 200;
+
+  function calculateStayAmount() {
+    const checkInDate = new Date(checkInInput.value);
+    const checkOutDate = new Date(checkOutInput.value);
+
+    if (!isNaN(checkInDate) && !isNaN(checkOutDate) && checkOutDate > checkInDate) {
+      const timeDiff = checkOutDate - checkInDate;
+      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      const total = baseRatePerNight * days;
+      totalDisplay.innerText = `Total: $${total} (${days} night${days > 1 ? 's' : ''})`;
+    } else {
+      totalDisplay.innerText = "Total: $0";
+    }
+  }
+
+  checkInInput.addEventListener("change", calculateStayAmount);
+  checkOutInput.addEventListener("change", calculateStayAmount);
 </script>
+
 
 </body>
 </html>

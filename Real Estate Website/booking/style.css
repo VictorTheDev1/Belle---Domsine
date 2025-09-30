@@ -205,7 +205,7 @@ body, html {
     animation: fadeIn 0.4s ease;
   }
 #popupOverlay {
-  display: none; /* hide it until triggered */
+  display: none; /* hide it until triggered */   
 }
 
   /* Popup Box */
@@ -321,4 +321,5 @@ body, html {
     #connectBtn {
       width: 100%;
     }
+   
   }

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anton&family=Baskervville:ital,wght@0,400..700;1,400..700&family=LXGW+Marker+Gothic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url("/img/hotel rm.jpg") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: LXGW Marker Gothic;
+}
+
+/* Header */
+header h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px;
+  font-family: LXGW Marker Gothic;
+}
+
+/* Main form container */
+main form {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 35px;
+  width: 90%;
+  max-width: 420px;
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  font-family: LXGW Marker Gothic;
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: LXGW Marker Gothic;
+}
+
+/* Inputs, Selects, and Textareas */
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #000000;
+  font-size: 1rem;
+  outline: none;
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+  font-family: LXGW Marker Gothic;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  font-family: LXGW Marker Gothic;
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Button */
+form button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ffcf4d, #ffb347);
+  border: none;
+  border-radius: 10px;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: LXGW Marker Gothic;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ffe67a, #ffd24c);
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}

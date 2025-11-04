@@ -431,18 +431,7 @@
       gap: 117px;
     }
 
-    .years-box {
-      padding: 35px;
-      text-align: center;
-      border: 2px solid #fff;
-      margin-bottom: 20px;
-         border-radius: 34px;
-             display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-left: 70px;
-  margin-top: 20px;
-    }
+  
 
     .years-box h1 {
       font-size: 3.5rem;
@@ -464,15 +453,23 @@
       font-size: 1.8rem;
          color: #fff;
         font-weight: 350;
+    }
 
+    .h19{
+      margin-top: 30px;
     }
 
     .intro-text2 p {
       margin: 15px 0;
       color: #ccc;
       font-family: Lato;
-      margin-bottom: 25px;
+      font-size: 30px;
+      margin-bottom: 55px;
+      margin-top: -12px;
+      font-weight: 300;
     }
+
+    
 
     .intro-text h6{
       color: #c89b61;

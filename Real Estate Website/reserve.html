@@ -6,113 +6,112 @@
   <title>Reserve Rooms</title>
   <link rel="shortcut icon" href="/img/B.svg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anton&family=Baskervville:ital,wght@0,400..700;1,400..700&family=LXGW+Marker+Gothic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-   body {
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anton&family=Baskervville:ital,wght@0,400..700;1,400..700&family=LXGW+Marker+Gothic&display=swap');
+
+body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: url('img/hotel rm.jpg') no-repeat center center fixed;
+  background: url('/img/hotel rm.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
   color: #333;
   font-family: LXGW Marker Gothic;
 }
- 
+
 .bg-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: brightness(0.7); /* darkens the image slightly */
+  backdrop-filter: brightness(0.7);
   z-index: -1;
 }
 
+.container {           
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
 
-    .container {           
-      max-width: 1200px;
-      margin: auto;
-      padding: 2rem;
-    }
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #95b0cb;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #95b0cb;
-    }
+.room-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 
-    .room-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-  .room-card {
-  background: rgba(237, 235, 234, 0.2); /* semi-transparent */
-  backdrop-filter: blur(22px); /* this blurs the background behind it */
-  -webkit-backdrop-filter: blur(15px); /* for Safari support */
+.room-card {
+  background: rgba(237, 235, 234, 0.2);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* optional: adds glassy border */
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.room-card:hover {
+  transform: translateY(-5px);
+}
 
-    .room-card:hover {
-      transform: translateY(-5px);
-    }
+.room-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    .room-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+.room-content {
+  padding: 1.5rem;
+}
 
-    .room-content {
-      padding: 1.5rem;
-    }
+.room-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
 
-    .room-name {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #3d1505;
-      margin: 0 0 0.5rem;
-    }
+.room-price {
+  color: #ffcf4d;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
 
-    .room-price {
-      color: #c5a560;
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
+.room-desc {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
 
-    .room-desc {
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      color: #ffffff;
-    }
+.book-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffcf4d, #ffb347);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-    .book-btn {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #c5a560, #b89442);
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .book-btn:hover {
-      background: linear-gradient(135deg, #b89442, #c5a560);
-    }
+.book-btn:hover {
+  background: linear-gradient(135deg, #ffe67a, #ffd24c);
+}
   </style>
 </head>
 <body>
-    <div class="bg-overlay"></div>
+  <div class="bg-overlay"></div>
 
   <div class="container">
     <h1 class="section-title">Reserve a Room</h1>
@@ -120,11 +119,11 @@
     <div class="room-grid">
       <!-- Room 1 -->
       <div class="room-card">
-        <img src="/img/Rooms/hotel rm.jpg" class="room-img" alt="Room 101">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" class="room-img" alt="Standard Room">
         <div class="room-content">
           <h3 class="room-name">Standard Room</h3>
           <p class="room-price">$120 / night</p>
-          <p class="room-desc">A cozy and clean room perfect for solo travelers or couples. Includes Wi-Fi, TV, and a private bathroom.</p>
+          <p class="room-desc">A cozy and clean space perfect for solo travelers or couples, featuring Wi-Fi, TV, and a private bathroom.</p>
           <a href="/booking/index.html?room=Standard%20Room&price=$120/Night" class="book-btn">Book Now</a>
         </div>
       </div>
@@ -135,53 +134,56 @@
         <div class="room-content">
           <h3 class="room-name">Deluxe Room</h3>
           <p class="room-price">$200 / night</p>
-          <p class="room-desc">Spacious deluxe room with elegant decor, balcony view, king-size bed, and luxurious bathroom amenities.</p>
+          <p class="room-desc">A spacious, elegant room with a king-size bed, balcony view, and premium bathroom amenities.</p>
           <a href="/booking/index.html?room=Deluxe%20Room&price=$200/Night" class="book-btn">Book Now</a>
         </div>
       </div>
 
       <!-- Room 3 -->
       <div class="room-card">
-        <img src="img/Rooms/img2.jpg" class="room-img" alt="Suite">
+        <img src="/img/Rooms/img2.jpg" class="room-img" alt="Modern Suite">
         <div class="room-content">
           <h3 class="room-name">Modern Suite</h3>
           <p class="room-price">$320 / night</p>
-          <p class="room-desc">Top-tier luxury suite with private lounge, full kitchen, ocean view, and smart automation throughout the room.</p>
+          <p class="room-desc">A luxurious suite with ocean views, private lounge, kitchen, and smart home features.</p>
           <a href="/booking/index.html?room=Modern%20Suite&price=$320/Night" class="book-btn">Book Now</a>
         </div>
       </div>
 
-  <div class="room-card">
-        <img src="/img/Rooms/img3.jpg" class="room-img" alt="Room 101">
+      <!-- Room 4 -->
+      <div class="room-card">
+        <img src="/img/Rooms/img3.jpg" class="room-img" alt="Executive Room">
         <div class="room-content">
-          <h3 class="room-name">Standard Room</h3>
-          <p class="room-price">$120 / night</p>
-          <p class="room-desc">A cozy and clean room perfect for solo travelers or couples. Includes Wi-Fi, TV, and a private bathroom.</p>
-          <a href="/booking/index.html?room=Standard%20Room&price=$120/Night" class="book-btn">Book Now</a>
+          <h3 class="room-name">Executive Room</h3>
+          <p class="room-price">$250 / night</p>
+          <p class="room-desc">Designed for business travelers, offering a workspace, lounge chair, and high-speed internet access.</p>
+          <a href="/booking/index.html?room=Executive%20Room&price=$250/Night" class="book-btn">Book Now</a>
         </div>
       </div>
 
-      <!-- Room 2 -->
+      <!-- Room 5 -->
       <div class="room-card">
-        <img src="/img/Rooms/room1.jpg" class="room-img" alt="Deluxe Room">
+        <img src="/img/Rooms/room1.jpg" class="room-img" alt="Family Suite">
         <div class="room-content">
-          <h3 class="room-name">Deluxe Room</h3>
-          <p class="room-price">$200 / night</p>
-          <p class="room-desc">Spacious deluxe room with elegant decor, balcony view, king-size bed, and luxurious bathroom amenities.</p>
-          <a href="/booking/index.html?room=Deluxe%20Room&price=$200/Night" class="book-btn">Book Now</a>
+          <h3 class="room-name">Family Suite</h3>
+          <p class="room-price">$280 / night</p>
+          <p class="room-desc">Spacious and cozy, this suite is ideal for families. Includes two queen beds and a private living area.</p>
+          <a href="/booking/index.html?room=Family%20Suite&price=$280/Night" class="book-btn">Book Now</a>
         </div>
       </div>
 
-      <!-- Room 3 -->
+      <!-- Room 6 -->
       <div class="room-card">
-        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" class="room-img" alt="Suite">
+        <img src="img/Rooms/hotel rm.jpg" class="room-img" alt="Presidential Suite">
         <div class="room-content">
-          <h3 class="room-name">Modern Suite</h3>
-          <p class="room-price">$320 / night</p>
-          <p class="room-desc">Top-tier luxury suite with private lounge, full kitchen, ocean view, and smart automation throughout the room.</p>
-          <a href="/booking/index.html?room=Modern%20Suite&price=$320/Night" class="book-btn">Book Now</a>
+          <h3 class="room-name">Presidential Suite</h3>
+          <p class="room-price">$450 / night</p>
+          <p class="room-desc">Ultimate luxury with panoramic views, a hot tub, private dining area, and 24/7 butler service.</p>
+          <a href="/booking/index.html?room=Presidential%20Suite&price=$450/Night" class="book-btn">Book Now</a>
         </div>
       </div>
+
+     
 
     </div>
   </div>

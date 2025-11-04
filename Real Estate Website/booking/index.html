@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hotel Booking</title>
-   <link rel="shortcut icon" href="/img/B.svg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -65,7 +64,7 @@
     <div class="payment-methods">
       <label class="payment-method">
         <input type="radio" name="payment" value="card" onclick="showCard()">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/credit-card.png" width="30"><br>Card
+       <img src="https://img.icons8.com/ios-filled/50/ffffff/bank-cards.png" width="30"><br>Card
       </label>
       <label class="payment-method">
         <input type="radio" name="payment" value="apple">
@@ -96,12 +95,14 @@
   </div>
 
 <script>
+   // Go to next step (Payment)
   function nextStep() {
     document.getElementById("step1").style.display = "none";
     document.getElementById("step2").style.display = "block";
     updateSummary();
   }
 
+  // Load selected room & price from URL
   window.onload = function () {
     const params = new URLSearchParams(window.location.search);
     const room = params.get("room");
@@ -114,10 +115,11 @@
 
     if (price) {
       document.getElementById("priceInput").value = price;
-      document.getElementById("roomPrice").innerText = price.replace("$", "");
+      document.getElementById("totalAmount").innerText = `Total: ${price}`;
     }
   };
 
+  // Update booking summary
   function updateSummary() {
     const checkin = document.getElementById("checkin").value;
     const checkout = document.getElementById("checkout").value;
@@ -125,11 +127,13 @@
     document.getElementById("bookDate").innerText = bookDate;
   }
 
+  // Show card details
   function showCard() {
     document.getElementById("cardDetails").style.display = "block";
     document.getElementById("popupOverlay").style.display = "none";
   }
 
+  // Payment method popup behavior
   document.querySelectorAll('input[name="payment"]').forEach(input => {
     input.addEventListener("change", function () {
       if (this.value === "card") {
@@ -172,9 +176,9 @@
       loader.style.display = "none";
       connectedText.style.display = "block";
 
-      // Redirect after 1.5s
+      // Redirect to receipt after 1.5s
       setTimeout(() => {
-        window.location.href = "checkout.html";
+        redirectToReceipt();
       }, 1500);
     }, 2000);
   }
@@ -183,13 +187,10 @@
     document.getElementById("popupOverlay").style.display = "none";
   }
 
-  function submitForm(event) {
-    event.preventDefault();
-    window.location.href = "checkout.html";
-  }
+  // Calculate total stay cost
   const checkInInput = document.getElementById("checkin");
   const checkOutInput = document.getElementById("checkout");
-  const totalDisplay = document.getElementById("totalAmount"); // Add this in your HTML
+  const totalDisplay = document.getElementById("totalAmount");
   const baseRatePerNight = 200;
 
   function calculateStayAmount() {
@@ -208,6 +209,37 @@
 
   checkInInput.addEventListener("change", calculateStayAmount);
   checkOutInput.addEventListener("change", calculateStayAmount);
+
+  // When booking is completed — go to receipt page
+  function redirectToReceipt() {
+    const name = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const phone = document.querySelector('input[name="phone"]').value;
+    const room = document.querySelector('input[name="room"]').value;
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+    const guests = document.querySelector('input[name="guests"]').value;
+    const total = totalDisplay.innerText.replace("Total: ", "");
+
+    const params = new URLSearchParams({
+      name,
+      email,
+      phone,
+      room,
+      checkin,
+      checkout,
+      guests,
+      total
+    });
+
+    window.location.href = "receipt.html?" + params.toString();
+  }
+
+  // Override the submit form button
+  function submitForm(event) {
+    event.preventDefault();
+    redirectToReceipt();
+  }
 </script>
 
 

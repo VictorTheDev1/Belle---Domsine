@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anton&family=Baskervville:ital,wght@0,400..700;1,400..700&family=LXGW+Marker+Gothic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "LXGW Marker Gothic", sans-serif;
 }
 
 body {
@@ -15,7 +14,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: LXGW Marker Gothic;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -25,7 +25,6 @@ header h1 {
   font-size: 2.5rem;
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 25px;
-  font-family: LXGW Marker Gothic;
 }
 
 /* Main form container */
@@ -39,7 +38,6 @@ main form {
   max-width: 420px;
   color: #fff;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  font-family: LXGW Marker Gothic;
 }
 
 /* Labels */
@@ -48,7 +46,6 @@ form label {
   margin-top: 15px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  font-family: LXGW Marker Gothic;
 }
 
 /* Inputs, Selects, and Textareas */
@@ -61,12 +58,11 @@ form textarea {
   border-radius: 10px;
   margin-top: 8px;
   background: rgba(255, 255, 255, 0.15);
-  color: #000000;
+  color: #000;
   font-size: 1rem;
   outline: none;
   backdrop-filter: blur(12px);
   transition: 0.3s ease;
-  font-family: LXGW Marker Gothic;
 }
 
 form input::placeholder,
@@ -78,7 +74,6 @@ form input:focus,
 form select:focus,
 form textarea:focus {
   background: rgba(255, 255, 255, 0.25);
-  font-family: LXGW Marker Gothic;
   border-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
@@ -94,7 +89,6 @@ form button {
   color: #333;
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: LXGW Marker Gothic;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -112,4 +106,48 @@ footer {
   color: #fff;
   font-size: 0.9rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+/* ----------------------------- */
+/* 📱 RESPONSIVE DESIGN */
+/* ----------------------------- */
+
+/* Small phones (up to 400px) */
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  main form {
+    padding: 25px;
+    width: 95%;
+  }
+
+  form button {
+    font-size: 1rem;
+  }
+}
+
+/* Tablets (401px - 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 30px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  main form {
+    padding: 30px;
+    max-width: 500px;
+  }
+}
+
+/* Desktops (above 768px) */
+@media (min-width: 769px) {
+  main form {
+    max-width: 450px;
+  }
 }

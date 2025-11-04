@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Receipt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="/img/B.svg" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb347, #824e05);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .receipt {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 { text-align: center; margin-bottom: 20px; color: #ffb347; }
+    p { margin: 8px 0; }
+    .no-data { text-align: center; color: #999; }
+    .back-btn {
+      display: block;
+      margin-top: 25px;
+      text-align: center;
+      text-decoration: none;
+      background: #ffb347;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #b0731d;
+    }
+  </style>
+</head>
+<body>
+  <div class="receipt">
+    <h2>Booking Receipt</h2>
+    <div id="details" class="no-data">Loading your booking details...</div>
+    <a href="/index.html" class="back-btn">Return to Home</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const detailsDiv = document.getElementById("details");
+
+    if (params.toString().trim() === "") {
+      detailsDiv.innerHTML = "<p class='no-data'>No booking data found.</p>";
+    } else {
+      let html = "";
+      params.forEach((value, key) => {
+        const formattedKey = key.replace(/^\w/, c => c.toUpperCase());
+        html += `<p><strong>${formattedKey}:</strong> ${decodeURIComponent(value)}</p>`;
+      });
+      detailsDiv.innerHTML = html;
+      detailsDiv.classList.remove("no-data");
+    }
+  </script>
+</body>
+</html>

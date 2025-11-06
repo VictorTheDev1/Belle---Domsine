@@ -121,7 +121,7 @@
     ::-webkit-scrollbar-track {
         background: var(--dark);
     }
-
+     
     /* --------------------*\
    #Reused Styles
   \*-----------------------*/
@@ -929,7 +929,7 @@
   margin-bottom: -1px;
 }
 .intro-text2 p{
-  margin-top: -47px;
+  margin-top: -6px;
 }
      .image-box .overlay-text2 {
       bottom: 90%;

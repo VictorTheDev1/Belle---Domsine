@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Payment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .payment-container {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      color: #fff;
+    }
+
+    .payment-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 26px;
+    }
+
+    .summary {
+      background: rgba(255,255,255,0.2);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary p {
+      margin: 0.3rem 0;
+    }
+
+    .payment-methods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .payment-method {
+      background: rgba(255,255,255,0.15);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .payment-method:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+
+    .payment-method input {
+      display: none;
+    }
+
+    .card-info {
+      margin-top: 1.5rem;
+      display: none;
+    }
+
+    .card-info input {
+      width: 100%;
+      padding: 0.9rem;
+      margin-top: 0.8rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    .pay-btn {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, #c5a560, #b89442);
+      color: #000;
+      font-weight: bold;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 12px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .pay-btn:hover {
+      background: linear-gradient(135deg, #b89442, #c5a560);
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Complete Your Booking</h2>
+    <div class="summary">
+      <p><strong>Room:</strong> <span id="roomName">Loading...</span></p>
+      <p><strong>Date:</strong> <span id="bookDate">Loading...</span></p>
+      <p><strong>Price:</strong> $<span id="roomPrice">0</span></p>
+    </div>
+
+    <div class="payment-methods">
+      <label class="payment-method">
+        <input type="radio" name="payment" value="card" onclick="showCard()">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/credit-card.png" width="30"><br>Card
+      </label>
+      <label class="payment-method">
+        <input type="radio" name="payment" value="apple">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/mac-os.png" width="30"><br>Apple Pay
+      </label>
+      <label class="payment-method">
+        <input type="radio" name="payment" value="google">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/google-logo.png" width="30"><br>Google Pay
+      </label>
+      <label class="payment-method">
+        <input type="radio" name="payment" value="paypal">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/paypal.png" width="30"><br>PayPal
+      </label>
+    </div>
+
+    <div class="card-info" id="cardDetails">
+      <input type="text" placeholder="Cardholder Name">
+      <input type="text" placeholder="Card Number">
+      <input type="text" placeholder="Expiry Date (MM/YY)">
+      <input type="text" placeholder="CVV">
+    </div>
+
+    <button class="pay-btn">Pay & Reserve</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('roomName').innerText = params.get('room') || 'Unknown';
+    document.getElementById('bookDate').innerText = params.get('date') || 'N/A';
+    document.getElementById('roomPrice').innerText = params.get('price') || '0';
+
+    function showCard() {
+      document.getElementById('cardDetails').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

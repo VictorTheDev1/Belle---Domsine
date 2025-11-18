@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Page</title>
+    <link rel="shortcut icon" href="/img/B.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/Rate/style.css">
+</head>
+<body>
+    <header>
+        <h1>Rate Our Services</h1>
+    </header>
+    <main>
+        <!-- Connected to FormSubmit -->
+        <form action="https://formsubmit.co/moradeyovictor@gmail.com" method="POST">
+            
+            <!-- FormSubmit options (optional) -->
+            <input type="hidden" name="_captcha" value="false"> 
+            <input type="hidden" name="_subject" value="New Rating Submission!">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="rating">Rate Us:</label>
+            <select id="rating" name="rating" required>
+                <option value="">Select Rating</option>
+                <option value="⭐ 1 Star"> 1 Star</option>
+                <option value="⭐⭐ 2 Stars"> 2 Stars</option>
+                <option value="⭐⭐⭐ 3 Stars"> 3 Stars</option>
+                <option value="⭐⭐⭐⭐ 4 Stars"> 4 Stars</option>
+                <option value="⭐⭐⭐⭐⭐ 5 Stars"> 5 Stars</option>
+            </select>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Share your experience..."></textarea>
+
+            <button type="submit">Submit Rating</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Real Estate Website</p>
+    </footer>
+</body>
+</html>
